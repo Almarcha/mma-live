@@ -1,0 +1,61 @@
+name: 🥊 Update UFC Events & Deploy
+
+on:
+  # Ejecutar automáticamente dos veces al día
+  schedule:
+    - cron: '0 8,20 * * *'   # 8:00 AM y 8:00 PM UTC
+
+  # Permitir ejecución manual desde GitHub
+  workflow_dispatch:
+
+  # También ejecutar cuando se hace push
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el repositorio
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+
+      # 2. Configurar Python
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # 3. Instalar dependencias
+      - name: 📦 Install dependencies
+        run: pip install requests beautifulsoup4 lxml
+
+      # 4. Ejecutar el scraper
+      - name: 🔄 Run UFC scraper
+        run: python scripts/scraper.py
+
+      # 5. Commit automático si hay cambios en events.json
+      - name: 💾 Commit updated events.json
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "MMA Live Bot"
+          git add public/events.json
+          git diff --staged --quiet || git commit -m "🥊 Auto-update UFC events [$(date '+%Y-%m-%d %H:%M')]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 6. Deploy a GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public
+          branch: gh-pages
+          clean: true
