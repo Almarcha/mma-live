@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<!-- ✅ SUPABASE JS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<meta name="theme-color" content="#0a0a0f">
+<title>MMA LIVE · UFC</title>
+</head>
+
+<body>
+
+<script>
+// =====================================================
+// 🔥 CONFIG (PASO 4)
+// =====================================================
+const API_URL = 'https://mma-live-api.onrender.com';
+const SUPABASE_URL  = 'https://ogatxfvfrlhhdwotaici.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYXR4ZnZmcmxoaGR3b3RhaWNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2MzY5MjAsImV4cCI6MjA5MDIxMjkyMH0.NJHMTFOhEPbn1jGixhToczZ84C8rahjxEKMQ-TC76XU';
+
+// Inicializar Supabase
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+// =====================================================
+// 🔐 AUTH
+// =====================================================
+
+// Registro
+async function register(email, password, username) {
+  const { data, error } = await sb.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { full_name: username }
+    }
+  });
+
+  if (error) throw error;
+  return data;
+}
+
+// Login
+async function login(email, password) {
+  const { data, error } = await sb.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) throw error;
+
+  localStorage.setItem('mma_token', data.session.access_token);
+  return data;
+}
+
+// Logout
+function logout() {
+  localStorage.removeItem('mma_token');
+}
+
+// =====================================================
+// 🌐 API CALL
+// =====================================================
+async function apiCall(endpoint, method = 'GET', body = null) {
+  const token = localStorage.getItem('mma_token');
+
+  const res = await fetch(`${API_URL}${endpoint}`, {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: body ? JSON.stringify(body) : null
+  });
+
+  return res.json();
+}
+
+// =====================================================
+// 🧪 EJEMPLOS DE USO (puedes probar en consola)
+// =====================================================
+// await apiCall('/events/upcoming')
+// await apiCall('/users/me')
+// await apiCall('/fighters?status=Active&page=1')
+
+// =====================================================
+// 👇 TU APP ORIGINAL (NO TOCADO)
+// =====================================================
+
+// (Aquí puedes pegar TODO tu script original tal cual debajo)
+
+// Ejemplo:
+console.log("Frontend listo + API conectada 🚀");
+
+</script>
+
+</body>
+</html>

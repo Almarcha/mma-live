@@ -1,0 +1,72 @@
+{
+  "updated_at": "2026-04-07T09:35:44.851957+00:00",
+  "source": "ufc.com scraper",
+  "count": 5,
+  "events": [
+    {
+      "name": "UFC Fight Night 271",
+      "subtitle": "Adesanya vs Pyfer",
+      "date": "28 Mar 2026",
+      "date_iso": "2026-03-29T01:00:00Z",
+      "location": "Seattle, WA",
+      "type": "fight-night",
+      "pill": "pill-fn",
+      "pillText": "Fight Night",
+      "main": "🥊 Israel Adesanya (24-5) vs Joe Pyfer (15-3)",
+      "url": "https://www.ufc.com/event/ufc-fight-night-march-28-2026",
+      "scraped_at": "2026-04-07T09:35:44.631180+00:00"
+    },
+    {
+      "name": "UFC Fight Night",
+      "subtitle": "Moicano vs Duncan",
+      "date": "4 Abr 2026",
+      "date_iso": "2026-04-05T01:00:00Z",
+      "location": "Las Vegas, NV · APEX",
+      "type": "fight-night",
+      "pill": "pill-fn",
+      "pillText": "Fight Night",
+      "main": "🥊 Renato Moicano vs Roosevelt Duncan",
+      "url": "https://www.ufc.com/events",
+      "scraped_at": "2026-04-07T09:35:44.631195+00:00"
+    },
+    {
+      "name": "UFC 327",
+      "subtitle": "Procházka vs Ulberg",
+      "date": "Abr 2026",
+      "date_iso": "",
+      "location": "Por confirmar",
+      "type": "numbered",
+      "pill": "pill-numbered",
+      "pillText": "Numerado",
+      "main": "🏆 Jiří Procházka vs Carlos Ulberg · Semipesado",
+      "url": "https://www.ufc.com/events",
+      "scraped_at": "2026-04-07T09:35:44.631198+00:00"
+    },
+    {
+      "name": "UFC 328",
+      "subtitle": "Chimaev vs Strickland",
+      "date": "May 2026",
+      "date_iso": "",
+      "location": "Por confirmar",
+      "type": "numbered",
+      "pill": "pill-numbered",
+      "pillText": "Numerado",
+      "main": "🏆 Khamzat Chimaev vs Sean Strickland · MW",
+      "url": "https://www.ufc.com/events",
+      "scraped_at": "2026-04-07T09:35:44.631200+00:00"
+    },
+    {
+      "name": "UFC Freedom 250",
+      "subtitle": "Topuria vs Gaethje",
+      "date": "14 Jun 2026",
+      "date_iso": "2026-06-14T23:00:00Z",
+      "location": "The White House, Washington D.C.",
+      "type": "special",
+      "pill": "pill-special",
+      "pillText": "Especial",
+      "main": "🏆 Ilia Topuria vs Justin Gaethje · Título Ligero",
+      "url": "https://www.ufc.com/events",
+      "scraped_at": "2026-04-07T09:35:44.631202+00:00"
+    }
+  ]
+}
