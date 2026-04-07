@@ -3,16 +3,14 @@ name: 🥊 Update UFC Events & Deploy
 on:
   schedule:
     - cron: '0 8,20 * * *'   # 8:00 AM y 8:00 PM UTC
-
   workflow_dispatch:
-
   push:
     branches: [main]
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  pages: write      # 🔥 Requerido para desplegar
+  id-token: write   # 🔥 Requerido para autenticar el despliegue
 
 jobs:
   scrape-and-deploy:
@@ -23,7 +21,7 @@ jobs:
       - name: 📥 Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # 🔥 IMPORTANTE para evitar errores de rebase
+          fetch-depth: 0
 
       # 2. Setup Python
       - name: 🐍 Setup Python
@@ -36,31 +34,27 @@ jobs:
       - name: 📦 Install dependencies
         run: pip install requests beautifulsoup4 lxml
 
-      # 4. Run scraper
+      # 4. Run scraper (asegúrate de que guarda el JSON en la carpeta 'public')
       - name: 🔄 Run UFC scraper
         run: python scripts/scraper.py
 
-      # 5. Commit changes safely
+      # 5. Commit cambios en el JSON (para que persistan en tu repo)
       - name: 💾 Commit updated events.json
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "MMA Live Bot"
-
           git add public/events.json
-
-          # 🔥 Solo commit si hay cambios
           git diff --staged --quiet && echo "No changes" && exit 0 || git commit -m "🥊 Auto-update UFC events [$(date '+%Y-%m-%d %H:%M')]"
-
-          # 🔥 CLAVE: evitar error "fetch first"
           git pull --rebase origin main
-
           git push origin main
 
-      # 6. Deploy GitHub Pages
-      - name: 🚀 Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      # 6. Subir la carpeta 'public' como artefacto de Pages
+      - name: 📦 Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: public
-          branch: gh-pages
-          clean: true
-          force: true
+          path: './public'  # Ojo: aquí DEBE estar tu index.html
+
+      # 7. Desplegar a GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
