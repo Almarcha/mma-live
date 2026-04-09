@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-09T09:04:41.397857+00:00",
+  "updated_at": "2026-04-09T20:47:11.289173+00:00",
   "source": "ufc.com scraper",
   "count": 5,
   "events": [
@@ -14,7 +14,7 @@
       "pillText": "Fight Night",
       "main": "🥊 Israel Adesanya (24-5) vs Joe Pyfer (15-3)",
       "url": "https://www.ufc.com/event/ufc-fight-night-march-28-2026",
-      "scraped_at": "2026-04-09T09:04:41.213785+00:00"
+      "scraped_at": "2026-04-09T20:47:11.017821+00:00"
     },
     {
       "name": "UFC Fight Night",
@@ -27,7 +27,7 @@
       "pillText": "Fight Night",
       "main": "🥊 Renato Moicano vs Roosevelt Duncan",
       "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-09T09:04:41.213799+00:00"
+      "scraped_at": "2026-04-09T20:47:11.017835+00:00"
     },
     {
       "name": "UFC 327",
@@ -40,7 +40,7 @@
       "pillText": "Numerado",
       "main": "🏆 Jiří Procházka vs Carlos Ulberg · Semipesado",
       "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-09T09:04:41.213802+00:00"
+      "scraped_at": "2026-04-09T20:47:11.017838+00:00"
     },
     {
       "name": "UFC 328",
@@ -53,7 +53,7 @@
       "pillText": "Numerado",
       "main": "🏆 Khamzat Chimaev vs Sean Strickland · MW",
       "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-09T09:04:41.213804+00:00"
+      "scraped_at": "2026-04-09T20:47:11.017840+00:00"
     },
     {
       "name": "UFC Freedom 250",
@@ -66,7 +66,7 @@
       "pillText": "Especial",
       "main": "🏆 Ilia Topuria vs Justin Gaethje · Título Ligero",
       "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-09T09:04:41.213806+00:00"
+      "scraped_at": "2026-04-09T20:47:11.017841+00:00"
     }
   ]
 }
