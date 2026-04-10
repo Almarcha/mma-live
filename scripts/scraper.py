@@ -1,252 +1,179 @@
-#!/usr/bin/env python3
 """
-MMA Live - Automatización de eventos UFC
-=========================================
-Scrapea UFC.com y genera events.json actualizado.
-Ejecutar manualmente o programar con GitHub Actions / cron.
+UFC Upcoming Events Scraper
+============================
+Extrae todos los eventos futuros de https://www.ufc.com/events
+y descarta los que sean anteriores a la fecha de hoy.
 
-Instalación:
-    pip install requests beautifulsoup4 lxml
-
-Uso:
-    python scraper.py
-
-Salida:
-    public/events.json  (leído automáticamente por la app)
+Dependencias:
+    pip install requests beautifulsoup4
 """
 
-import json
 import re
-import sys
-import time
-from datetime import datetime, timezone
-from pathlib import Path
-
+import json
+from datetime import date, datetime
 import requests
 from bs4 import BeautifulSoup
 
-# ─────────────────────────────────────────
-# CONFIG
-# ─────────────────────────────────────────
-UFC_EVENTS_URL = "https://www.ufc.com/events"
-OUTPUT_PATH    = Path(__file__).parent.parent / "public" / "events.json"
+URL = "https://www.ufc.com/events"
+TODAY = date.today()
+
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Linux; Android 12; Pixel 6) "
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/112.0.0.0 Mobile Safari/537.36"
+        "Chrome/124.0.0.0 Safari/537.36"
     ),
-    "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
 }
-REQUEST_TIMEOUT = 15
-SLEEP_BETWEEN_REQUESTS = 2  # segundos, para no sobrecargar
+
+# Abreviaturas de mes que usa UFC en sus tarjetas
+MONTH_ABBR = {
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4,
+    "may": 5, "jun": 6, "jul": 7, "aug": 8,
+    "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
 
 
-# ─────────────────────────────────────────
-# UTILIDADES
-# ─────────────────────────────────────────
-def log(msg: str):
-    ts = datetime.now().strftime("%H:%M:%S")
-    print(f"[{ts}] {msg}", flush=True)
-
-
-def clean(text: str) -> str:
-    return " ".join(text.split()) if text else ""
-
-
-# ─────────────────────────────────────────
-# SCRAPING UFC.COM
-# ─────────────────────────────────────────
-def fetch_ufc_events():
-    url = "https://d29dxerjsp82wz.cloudfront.net/api/v3/events"
-
-    resp = requests.get(url, headers=HEADERS)
-    data = resp.json()
-
-    events = []
-
-    for e in data.get("events", []):
-        event_type = classify_event(e.get("name", ""))
-
-        events.append({
-            "name": e.get("name"),
-            "date": e.get("date"),
-            "date_iso": e.get("date"),
-            "location": e.get("location", "Por confirmar"),
-            "type": event_type["type"],
-            "pill": event_type["pill"],
-            "pillText": event_type["pillText"],
-            "main": e.get("headline", ""),
-            "url": f"https://www.ufc.com/event/{e.get('slug')}",
-            "scraped_at": datetime.now(timezone.utc).isoformat(),
-        })
-
-    return events
-
-
-def parse_event_card(card) -> dict | None:
-    # Nombre
-    name_el = card.find(['h2', 'h3'])
-    name = clean(name_el.get_text()) if name_el else ""
-    if not name:
+def parse_ufc_date(raw: str) -> date | None:
+    """
+    Parsea strings del tipo:
+      'Sat, Apr 11 / 9:00 PM EDT / Main Card'
+    Devuelve un objeto date o None si falla.
+    """
+    m = re.search(r"\w+,\s+(\w+)\s+(\d{1,2})", raw)
+    if not m:
         return None
 
-    # Fecha
-    time_el = card.find('time')
-    date_str = clean(time_el.get_text()) if time_el else ""
-    date_iso = time_el.get("datetime", "") if time_el else ""
+    month_str = m.group(1).lower()[:3]
+    day = int(m.group(2))
+    month = MONTH_ABBR.get(month_str)
+    if not month:
+        return None
 
-    # Localización
-    location = "Por confirmar"
-    loc_el = card.find(string=re.compile(r','))
-    if loc_el:
-        location = clean(loc_el)
+    # El año no aparece en la tarjeta — lo inferimos comparando con hoy
+    year = TODAY.year
+    try:
+        candidate = date(year, month, day)
+    except ValueError:
+        return None
 
-    # Fighters
-    fighters = card.find_all(string=re.compile(r'vs|VS'))
-    main = clean(fighters[0]) if fighters else ""
+    # Si la fecha resultante ya pasó, probamos el año siguiente
+    if candidate < TODAY:
+        try:
+            candidate = date(year + 1, month, day)
+        except ValueError:
+            return None
 
-    # URL
-    link = card.find('a', href=True)
-    url = "https://d29dxerjsp82wz.cloudfront.net/api/v3/events"
-
-    event_type = classify_event(name)
-
-    return {
-        "name": name,
-        "date": date_str,
-        "date_iso": date_iso,
-        "location": location,
-        "type": event_type["type"],
-        "pill": event_type["pill"],
-        "pillText": event_type["pillText"],
-        "main": main,
-        "url": url,
-        "scraped_at": datetime.now(timezone.utc).isoformat(),
-    }
+    return candidate
 
 
-def classify_event(name: str) -> dict:
-    """Clasifica el evento por tipo basado en el nombre."""
-    name_lower = name.lower()
-    if re.search(r'\bufc\s+\d{3}\b', name_lower):
-        return {"type": "numbered", "pill": "pill-numbered", "pillText": "Numerado"}
-    elif "fight night" in name_lower:
-        return {"type": "fight-night", "pill": "pill-fn", "pillText": "Fight Night"}
-    elif any(w in name_lower for w in ["championship", "title", "freedom", "special"]):
-        return {"type": "special", "pill": "pill-special", "pillText": "Especial"}
-    else:
-        return {"type": "fight-night", "pill": "pill-fn", "pillText": "Fight Night"}
+def scrape_upcoming_events() -> list[dict]:
+    print(f"[*] Descargando {URL} ...")
+    resp = requests.get(URL, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    events = []
+
+    # Cada evento aparece como <h3><a href="/event/...">Nombre</a></h3>
+    # La fecha está en el siguiente <a> con el mismo href que tiene el texto de la hora
+    for h3 in soup.find_all("h3"):
+        link = h3.find("a", href=re.compile(r"/event/"))
+        if not link:
+            continue
+
+        name = link.get_text(strip=True)
+        event_url = "https://www.ufc.com" + link["href"]
+
+        # Buscar la fecha en los elementos cercanos
+        date_text = ""
+        parent = h3.find_parent()
+        if parent:
+            for a in parent.find_all("a", href=link["href"]):
+                t = a.get_text(strip=True)
+                if re.search(r"\w+,\s+\w+\s+\d{1,2}\s*/", t):
+                    date_text = t
+                    break
+
+        # Fallback: buscar en siblings del h3
+        if not date_text:
+            for sibling in h3.find_next_siblings():
+                text = sibling.get_text(" ", strip=True)
+                if re.search(r"\w+,\s+\w+\s+\d{1,2}\s*/", text):
+                    date_text = text
+                    break
+                if sibling.name == "h3":
+                    break
+
+        event_date = parse_ufc_date(date_text) if date_text else None
+
+        # Descartar eventos pasados
+        if event_date and event_date < TODAY:
+            continue
+
+        # Ubicación: buscar <h5> (venue) y el texto de ciudad que le sigue
+        location = "–"
+        if parent:
+            venue_el = parent.find("h5")
+            if venue_el:
+                city_parts = []
+                for sib in venue_el.find_next_siblings():
+                    t = sib.get_text(strip=True)
+                    if t and not re.search(
+                        r"How to Watch|Tickets|Watch On|Prelims|Main Card|EDT|EST|PDT|PST",
+                        t
+                    ):
+                        city_parts.append(t)
+                    if len(city_parts) >= 2:
+                        break
+                location = venue_el.get_text(strip=True)
+                if city_parts:
+                    location += " — " + ", ".join(city_parts)
+
+        events.append({
+            "name": name,
+            "date": event_date.isoformat() if event_date else (date_text or "Fecha desconocida"),
+            "location": location,
+            "url": event_url,
+        })
+
+    # Eliminar duplicados por URL
+    seen = set()
+    unique = []
+    for ev in events:
+        if ev["url"] not in seen:
+            seen.add(ev["url"])
+            unique.append(ev)
+
+    # Ordenar por fecha
+    unique.sort(key=lambda e: e["date"])
+    return unique
 
 
-# ─────────────────────────────────────────
-# FALLBACK: datos hardcodeados actualizados
-# ─────────────────────────────────────────
-FALLBACK_EVENTS = [
-    {
-        "name": "UFC Fight Night 271",
-        "subtitle": "Adesanya vs Pyfer",
-        "date": "28 Mar 2026",
-        "date_iso": "2026-03-29T01:00:00Z",
-        "location": "Seattle, WA",
-        "type": "fight-night",
-        "pill": "pill-fn",
-        "pillText": "Fight Night",
-        "main": "🥊 Israel Adesanya (24-5) vs Joe Pyfer (15-3)",
-        "url": "https://www.ufc.com/event/ufc-fight-night-march-28-2026",
-        "scraped_at": datetime.now(timezone.utc).isoformat(),
-    },
-    {
-        "name": "UFC Fight Night",
-        "subtitle": "Moicano vs Duncan",
-        "date": "4 Abr 2026",
-        "date_iso": "2026-04-05T01:00:00Z",
-        "location": "Las Vegas, NV · APEX",
-        "type": "fight-night",
-        "pill": "pill-fn",
-        "pillText": "Fight Night",
-        "main": "🥊 Renato Moicano vs Roosevelt Duncan",
-        "url": "https://www.ufc.com/events",
-        "scraped_at": datetime.now(timezone.utc).isoformat(),
-    },
-    {
-        "name": "UFC 327",
-        "subtitle": "Procházka vs Ulberg",
-        "date": "Abr 2026",
-        "date_iso": "",
-        "location": "Por confirmar",
-        "type": "numbered",
-        "pill": "pill-numbered",
-        "pillText": "Numerado",
-        "main": "🏆 Jiří Procházka vs Carlos Ulberg · Semipesado",
-        "url": "https://www.ufc.com/events",
-        "scraped_at": datetime.now(timezone.utc).isoformat(),
-    },
-    {
-        "name": "UFC 328",
-        "subtitle": "Chimaev vs Strickland",
-        "date": "May 2026",
-        "date_iso": "",
-        "location": "Por confirmar",
-        "type": "numbered",
-        "pill": "pill-numbered",
-        "pillText": "Numerado",
-        "main": "🏆 Khamzat Chimaev vs Sean Strickland · MW",
-        "url": "https://www.ufc.com/events",
-        "scraped_at": datetime.now(timezone.utc).isoformat(),
-    },
-    {
-        "name": "UFC Freedom 250",
-        "subtitle": "Topuria vs Gaethje",
-        "date": "14 Jun 2026",
-        "date_iso": "2026-06-14T23:00:00Z",
-        "location": "The White House, Washington D.C.",
-        "type": "special",
-        "pill": "pill-special",
-        "pillText": "Especial",
-        "main": "🏆 Ilia Topuria vs Justin Gaethje · Título Ligero",
-        "url": "https://www.ufc.com/events",
-        "scraped_at": datetime.now(timezone.utc).isoformat(),
-    },
-]
-
-
-# ─────────────────────────────────────────
-# GUARDAR JSON
-# ─────────────────────────────────────────
-def save_events(events: list[dict]):
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "updated_at": datetime.now(timezone.utc).isoformat(),
-        "source":     "ufc.com scraper",
-        "count":      len(events),
-        "events":     events,
-    }
-    OUTPUT_PATH.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2),
-        encoding="utf-8"
-    )
-    log(f"✅ Guardado en {OUTPUT_PATH} ({len(events)} eventos)")
-
-
-# ─────────────────────────────────────────
-# MAIN
-# ─────────────────────────────────────────
 def main():
-    log("=" * 50)
-    log("MMA Live · Scraper de eventos UFC")
-    log("=" * 50)
+    print(f"{'=' * 55}")
+    print(f"  UFC Events Scraper — Eventos a partir de {TODAY}")
+    print(f"{'=' * 55}\n")
 
-    events = fetch_ufc_events()
+    upcoming = scrape_upcoming_events()
 
-    if not events:
-        log("⚠️  Scraping falló o devolvió 0 eventos. Usando fallback.")
-        events = FALLBACK_EVENTS
-    else:
-        log(f"✔  {len(events)} eventos obtenidos del scraping")
+    if not upcoming:
+        print("No se encontraron eventos futuros.")
+        return
 
-    save_events(events)
-    log("Listo.")
+    print(f"✅ {len(upcoming)} eventos futuros encontrados:\n")
+    for i, ev in enumerate(upcoming, 1):
+        print(f"  {i:02d}. {ev['name']}")
+        print(f"      📅 {ev['date']}")
+        print(f"      📍 {ev['location']}")
+        print(f"      🔗 {ev['url']}")
+        print()
+
+    output_file = "public/events.json"
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(upcoming, f, ensure_ascii=False, indent=2)
+
+    print(f"💾 Resultados guardados en '{output_file}'")
 
 
 if __name__ == "__main__":
