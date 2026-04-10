@@ -314,7 +314,9 @@ body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);min-
 // =====================================================
 // CONFIG
 // =====================================================
-const supabase = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON);
+if (typeof supabase === 'undefined') {
+	const supabase = window.supabase?.createClient(SUPABASE_URL, SUPABASE_ANON);
+}
 let currentUser = null;
 let nextEventData = null;
 let cdInterval = null;
