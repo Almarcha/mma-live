@@ -29,11 +29,6 @@
       background: #1e293b;
       border-radius: 12px;
       padding: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .event-card h3 {
-      margin-top: 10px;
     }
 
     .pill {
@@ -44,27 +39,15 @@
       font-weight: bold;
     }
 
-    .pill-numbered {
-      background: #dc2626;
-    }
-
-    .pill-fn {
-      background: #2563eb;
-    }
-
-    .pill-special {
-      background: #16a34a;
-    }
+    .pill-numbered { background: #dc2626; }
+    .pill-fn { background: #2563eb; }
+    .pill-special { background: #16a34a; }
 
     a {
       display: inline-block;
       margin-top: 10px;
       color: #38bdf8;
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -78,15 +61,16 @@
   </div>
 
   <script>
-    // 🔥 Cargar JSON generado por tu scraper
     async function loadEvents() {
       try {
-        const res = await fetch('https://almarcha.github.io/mma-live/events.json');
+        const res = await fetch('https://almarcha.github.io/mma-live/events.json?v=' + Date.now());
         const json = await res.json();
 
-        let events = json.events || [];
+        console.log("JSON:", json);
 
-        // 👉 ordenar por fecha si existe
+        let events = Array.isArray(json.events) ? json.events : [];
+
+        // ordenar por fecha
         events.sort((a, b) => {
           if (!a.date_iso) return 1;
           if (!b.date_iso) return -1;
@@ -102,7 +86,6 @@
       }
     }
 
-    // 🎯 Renderizar eventos
     function renderEvents(events) {
       const container = document.getElementById('events');
 
@@ -112,8 +95,6 @@
       }
 
       container.innerHTML = events.map(event => {
-
-        const fighters = event.fighters?.join(' vs ') || 'Por confirmar';
 
         return `
           <div class="event-card">
@@ -127,7 +108,7 @@
             <p><strong>📅</strong> ${event.date || 'Por confirmar'}</p>
             <p><strong>📍</strong> ${event.location}</p>
 
-            <p><strong>🥊</strong> ${fighters}</p>
+            <p><strong>🥊</strong> ${event.main || 'Por confirmar'}</p>
 
             <a href="${event.url}" target="_blank">
               Ver evento →
@@ -138,28 +119,7 @@
       }).join('');
     }
 
-    // 🚀 iniciar
-    async function loadEvents() {
-  try {
-    const res = await fetch('https://almarcha.github.io/mma-live/events.json');
-    const json = await res.json();
-
-    let events = json.events || [];
-
-    events.sort((a, b) => {
-      if (!a.date_iso) return 1;
-      if (!b.date_iso) return -1;
-      return new Date(a.date_iso) - new Date(b.date_iso);
-    });
-
-    renderEvents(events);
-
-  } catch (err) {
-    console.error(err);
-    document.getElementById('events').innerHTML =
-      `<p>Error cargando eventos</p>`;
-  }
-}
+    loadEvents();
   </script>
 
 </body>
