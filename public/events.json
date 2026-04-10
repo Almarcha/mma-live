@@ -1,72 +1,98 @@
-{
-  "updated_at": "2026-04-10T09:12:37.658027+00:00",
-  "source": "ufc.com scraper",
-  "count": 5,
-  "events": [
-    {
-      "name": "UFC Fight Night 271",
-      "subtitle": "Adesanya vs Pyfer",
-      "date": "28 Mar 2026",
-      "date_iso": "2026-03-29T01:00:00Z",
-      "location": "Seattle, WA",
-      "type": "fight-night",
-      "pill": "pill-fn",
-      "pillText": "Fight Night",
-      "main": "🥊 Israel Adesanya (24-5) vs Joe Pyfer (15-3)",
-      "url": "https://www.ufc.com/event/ufc-fight-night-march-28-2026",
-      "scraped_at": "2026-04-10T09:12:37.373981+00:00"
-    },
-    {
-      "name": "UFC Fight Night",
-      "subtitle": "Moicano vs Duncan",
-      "date": "4 Abr 2026",
-      "date_iso": "2026-04-05T01:00:00Z",
-      "location": "Las Vegas, NV · APEX",
-      "type": "fight-night",
-      "pill": "pill-fn",
-      "pillText": "Fight Night",
-      "main": "🥊 Renato Moicano vs Roosevelt Duncan",
-      "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-10T09:12:37.373995+00:00"
-    },
-    {
-      "name": "UFC 327",
-      "subtitle": "Procházka vs Ulberg",
-      "date": "Abr 2026",
-      "date_iso": "",
-      "location": "Por confirmar",
-      "type": "numbered",
-      "pill": "pill-numbered",
-      "pillText": "Numerado",
-      "main": "🏆 Jiří Procházka vs Carlos Ulberg · Semipesado",
-      "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-10T09:12:37.373998+00:00"
-    },
-    {
-      "name": "UFC 328",
-      "subtitle": "Chimaev vs Strickland",
-      "date": "May 2026",
-      "date_iso": "",
-      "location": "Por confirmar",
-      "type": "numbered",
-      "pill": "pill-numbered",
-      "pillText": "Numerado",
-      "main": "🏆 Khamzat Chimaev vs Sean Strickland · MW",
-      "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-10T09:12:37.374000+00:00"
-    },
-    {
-      "name": "UFC Freedom 250",
-      "subtitle": "Topuria vs Gaethje",
-      "date": "14 Jun 2026",
-      "date_iso": "2026-06-14T23:00:00Z",
-      "location": "The White House, Washington D.C.",
-      "type": "special",
-      "pill": "pill-special",
-      "pillText": "Especial",
-      "main": "🏆 Ilia Topuria vs Justin Gaethje · Título Ligero",
-      "url": "https://www.ufc.com/events",
-      "scraped_at": "2026-04-10T09:12:37.374001+00:00"
-    }
-  ]
-}
+[
+  {
+    "name": "Prochazka vs Ulberg",
+    "date": "2026-04-11",
+    "location": "Kaseya Center",
+    "url": "https://www.ufc.com/event/ufc-327"
+  },
+  {
+    "name": "Burns vs Malott",
+    "date": "2026-04-18",
+    "location": "Canada Life Centre",
+    "url": "https://www.ufc.com/event/ufc-fight-night-april-18-2026"
+  },
+  {
+    "name": "Sterling vs Zalal",
+    "date": "2026-04-25",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-april-25-2026"
+  },
+  {
+    "name": "Della Maddalena vs Prates",
+    "date": "2026-05-02",
+    "location": "RAC Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-02-2026"
+  },
+  {
+    "name": "Chimaev vs Strickland",
+    "date": "2026-05-09",
+    "location": "Prudential Center",
+    "url": "https://www.ufc.com/event/ufc-328"
+  },
+  {
+    "name": "Allen vs Costa",
+    "date": "2026-05-16",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-16-2026"
+  },
+  {
+    "name": "Song vs Figueiredo",
+    "date": "2026-05-30",
+    "location": "Galaxy Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-30-2026"
+  },
+  {
+    "name": "Muhammad vs Bonfim",
+    "date": "2026-06-06",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
+  },
+  {
+    "name": "Bautista vs Oliveira",
+    "date": "2027-02-07",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-february-07-2026"
+  },
+  {
+    "name": "Strickland vs Hernandez",
+    "date": "2027-02-21",
+    "location": "Toyota Center",
+    "url": "https://www.ufc.com/event/ufc-fight-night-february-21-2026"
+  },
+  {
+    "name": "Moreno vs Kavanagh",
+    "date": "2027-02-28",
+    "location": "Arena CDMX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-february-28-2026"
+  },
+  {
+    "name": "Holloway vs Oliveira 2",
+    "date": "2027-03-07",
+    "location": "T-Mobile Arena",
+    "url": "https://www.ufc.com/event/ufc-326"
+  },
+  {
+    "name": "Emmett vs Vallejos",
+    "date": "2027-03-14",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-march-14-2026"
+  },
+  {
+    "name": "Evloev vs Murphy",
+    "date": "2027-03-21",
+    "location": "The O2",
+    "url": "https://www.ufc.com/event/ufc-fight-night-march-21-2026"
+  },
+  {
+    "name": "Adesanya vs Pyfer",
+    "date": "2027-03-28",
+    "location": "Climate Pledge Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-march-28-2026"
+  },
+  {
+    "name": "Moicano vs Duncan",
+    "date": "2027-04-04",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-april-04-2026"
+  }
+]
