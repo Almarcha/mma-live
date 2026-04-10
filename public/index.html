@@ -81,7 +81,7 @@
     // 🔥 Cargar JSON generado por tu scraper
     async function loadEvents() {
       try {
-        const res = await fetch('public/events.json');
+        const res = await fetch('tree/main/public/events.json');
         const json = await res.json();
 
         let events = json.events || [];
