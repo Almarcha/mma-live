@@ -57,97 +57,72 @@ def clean(text: str) -> str:
 # ─────────────────────────────────────────
 # SCRAPING UFC.COM
 # ─────────────────────────────────────────
-def fetch_ufc_events() -> list[dict]:
-    """Scrapea la página de eventos de UFC.com y devuelve lista de eventos."""
-    log(f"Fetching {UFC_EVENTS_URL} ...")
-    try:
-        resp = requests.get(UFC_EVENTS_URL, headers=HEADERS, timeout=REQUEST_TIMEOUT)
-        resp.raise_for_status()
-    except requests.RequestException as e:
-        log(f"ERROR al descargar UFC.com: {e}")
-        return []
+def fetch_ufc_events():
+    url = "https://d29dxerjsp82wz.cloudfront.net/api/v3/events"
 
-    soup = BeautifulSoup(resp.text, "lxml")
+    resp = requests.get(url, headers=HEADERS)
+    data = resp.json()
+
     events = []
 
-    # UFC.com usa divs con clase 'c-card-event--result'
-    cards = soup.select("li.c-card-event--result, div[class*='event-card']")
-    log(f"Encontrados {len(cards)} eventos en la página")
+    for e in data.get("events", []):
+        event_type = classify_event(e.get("name", ""))
 
-    for card in cards:
-        try:
-            event = parse_event_card(card)
-            if event:
-                events.append(event)
-        except Exception as e:
-            log(f"  SKIP: error parseando card: {e}")
-            continue
+        events.append({
+            "name": e.get("name"),
+            "date": e.get("date"),
+            "date_iso": e.get("date"),
+            "location": e.get("location", "Por confirmar"),
+            "type": event_type["type"],
+            "pill": event_type["pill"],
+            "pillText": event_type["pillText"],
+            "main": e.get("headline", ""),
+            "url": f"https://www.ufc.com/event/{e.get('slug')}",
+            "scraped_at": datetime.now(timezone.utc).isoformat(),
+        })
 
     return events
 
 
 def parse_event_card(card) -> dict | None:
-    """Extrae datos de un evento individual."""
-    # Nombre del evento
-    name_el = card.select_one(
-        ".c-card-event--result__headline, "
-        "h3.c-card-event--result__headline, "
-        "[class*='event-card__title'], "
-        "h2, h3"
-    )
+    # Nombre
+    name_el = card.find(['h2', 'h3'])
     name = clean(name_el.get_text()) if name_el else ""
     if not name:
         return None
 
     # Fecha
-    date_el = card.select_one(
-        ".c-card-event--result__date, "
-        "[class*='event-date'], "
-        "time"
-    )
-    date_str = ""
-    date_iso = ""
-    if date_el:
-        date_str = clean(date_el.get_text())
-        # Intentar leer atributo datetime de <time>
-        date_iso = date_el.get("datetime", "")
+    time_el = card.find('time')
+    date_str = clean(time_el.get_text()) if time_el else ""
+    date_iso = time_el.get("datetime", "") if time_el else ""
 
     # Localización
-    loc_el = card.select_one(
-        ".c-card-event--result__location, "
-        "[class*='event-location']"
-    )
-    location = clean(loc_el.get_text()) if loc_el else "Por confirmar"
+    location = "Por confirmar"
+    loc_el = card.find(string=re.compile(r','))
+    if loc_el:
+        location = clean(loc_el)
 
-    # Main event fighters
-    fighters = card.select(
-        ".c-card-event--result__athlete-name, "
-        "[class*='athlete-name'], "
-        "[class*='fighter-name']"
-    )
-    fighter_names = [clean(f.get_text()) for f in fighters if clean(f.get_text())]
+    # Fighters
+    fighters = card.find_all(string=re.compile(r'vs|VS'))
+    main = clean(fighters[0]) if fighters else ""
 
-    # Tipo de evento
+    # URL
+    link = card.find('a', href=True)
+    url = "https://d29dxerjsp82wz.cloudfront.net/api/v3/events"
+
     event_type = classify_event(name)
 
-    # URL del evento
-    link_el = card.select_one("a[href]")
-    url = ""
-    if link_el:
-        href = link_el.get("href", "")
-        url = f"https://www.ufc.com{href}" if href.startswith("/") else href
-
     return {
-        "name":        name,
-        "date":        date_str,
-        "date_iso":    date_iso,
-        "location":    location,
-        "fighters":    fighter_names,
-        "type":        event_type["type"],
-        "pill":        event_type["pill"],
-        "pillText":    event_type["pillText"],
-        "url":         url,
-        "scraped_at":  datetime.now(timezone.utc).isoformat(),
+        "name": name,
+        "date": date_str,
+        "date_iso": date_iso,
+        "location": location,
+        "type": event_type["type"],
+        "pill": event_type["pill"],
+        "pillText": event_type["pillText"],
+        "main": main,
+        "url": url,
+        "scraped_at": datetime.now(timezone.utc).isoformat(),
     }
 
 
