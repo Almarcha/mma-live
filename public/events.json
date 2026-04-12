@@ -1,11 +1,5 @@
 [
   {
-    "name": "Prochazka vs Ulberg",
-    "date": "2026-04-11",
-    "location": "Kaseya Center",
-    "url": "https://www.ufc.com/event/ufc-327"
-  },
-  {
     "name": "Burns vs Malott",
     "date": "2026-04-18",
     "location": "Canada Life Centre",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
   },
   {
-    "name": "Bautista vs Oliveira",
-    "date": "2027-02-07",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-february-07-2026"
+    "name": "Topuria vs Gaethje",
+    "date": "2026-06-14",
+    "location": "The White House",
+    "url": "https://www.ufc.com/event/ufc-freedom-250"
   },
   {
     "name": "Strickland vs Hernandez",
@@ -94,5 +88,11 @@
     "date": "2027-04-04",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-april-04-2026"
+  },
+  {
+    "name": "Prochazka vs Ulberg",
+    "date": "2027-04-11",
+    "location": "Kaseya Center",
+    "url": "https://www.ufc.com/event/ufc-327"
   }
 ]
