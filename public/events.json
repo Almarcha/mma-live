@@ -1,11 +1,5 @@
 [
   {
-    "name": "Sterling vs Zalal",
-    "date": "2026-04-25",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-april-25-2026"
-  },
-  {
     "name": "Della Maddalena vs Prates",
     "date": "2026-05-02",
     "location": "RAC Arena",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-june-27-2026"
   },
   {
-    "name": "Moreno vs Kavanagh",
-    "date": "2027-02-28",
-    "location": "Arena CDMX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-february-28-2026"
+    "name": "TBD vs TBD",
+    "date": "2026-07-11",
+    "location": "T-Mobile Arena",
+    "url": "https://www.ufc.com/event/ufc-329"
   },
   {
     "name": "Holloway vs Oliveira 2",
@@ -94,5 +88,11 @@
     "date": "2027-04-18",
     "location": "Canada Life Centre",
     "url": "https://www.ufc.com/event/ufc-fight-night-april-18-2026"
+  },
+  {
+    "name": "Sterling vs Zalal",
+    "date": "2027-04-25",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-april-25-2026"
   }
 ]
