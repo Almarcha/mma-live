@@ -1,11 +1,5 @@
 [
   {
-    "name": "Della Maddalena vs Prates",
-    "date": "2026-05-02",
-    "location": "RAC Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-may-02-2026"
-  },
-  {
     "name": "Chimaev vs Strickland",
     "date": "2026-05-09",
     "location": "Prudential Center",
@@ -94,5 +88,11 @@
     "date": "2027-04-25",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-april-25-2026"
+  },
+  {
+    "name": "Della Maddalena vs Prates",
+    "date": "2027-05-02",
+    "location": "RAC Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-02-2026"
   }
 ]
