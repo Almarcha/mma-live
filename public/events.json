@@ -1,11 +1,5 @@
 [
   {
-    "name": "Song vs Figueiredo",
-    "date": "2026-05-30",
-    "location": "Galaxy Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-may-30-2026"
-  },
-  {
     "name": "Muhammad vs Bonfim",
     "date": "2026-06-06",
     "location": "Meta APEX",
@@ -94,5 +88,11 @@
     "date": "2027-05-16",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-may-16-2026"
+  },
+  {
+    "name": "Song vs Figueiredo",
+    "date": "2027-05-30",
+    "location": "Galaxy Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-30-2026"
   }
 ]
