@@ -1,11 +1,5 @@
 [
   {
-    "name": "Muhammad vs Bonfim",
-    "date": "2026-06-06",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
-  },
-  {
     "name": "UFC Freedom 250",
     "date": "2026-06-14",
     "location": "The White House",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-august-01-2026"
   },
   {
-    "name": "Moicano vs Duncan",
-    "date": "2027-04-04",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-april-04-2026"
+    "name": "TBD vs TBD",
+    "date": "2026-08-15",
+    "location": "Xfinity Mobile Arena",
+    "url": "https://www.ufc.com/event/ufc-330"
   },
   {
     "name": "Prochazka vs Ulberg",
@@ -94,5 +88,11 @@
     "date": "2027-05-30",
     "location": "Galaxy Arena",
     "url": "https://www.ufc.com/event/ufc-fight-night-may-30-2026"
+  },
+  {
+    "name": "Muhammad vs Bonfim",
+    "date": "2027-06-06",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
   }
 ]
