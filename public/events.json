@@ -1,11 +1,5 @@
 [
   {
-    "name": "UFC Freedom 250",
-    "date": "2026-06-14",
-    "location": "The White House",
-    "url": "https://www.ufc.com/event/ufc-freedom-250"
-  },
-  {
     "name": "Kape vs Horiguchi",
     "date": "2026-06-20",
     "location": "Meta APEX",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-330"
   },
   {
-    "name": "Prochazka vs Ulberg",
-    "date": "2027-04-11",
-    "location": "Kaseya Center",
-    "url": "https://www.ufc.com/event/ufc-327"
+    "name": "TBD vs TBD",
+    "date": "2026-09-05",
+    "location": "Accor Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-september-05-2026"
   },
   {
     "name": "Burns vs Malott",
@@ -94,5 +88,11 @@
     "date": "2027-06-06",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
+  },
+  {
+    "name": "UFC Freedom 250",
+    "date": "2027-06-14",
+    "location": "The White House",
+    "url": "https://www.ufc.com/event/ufc-freedom-250"
   }
 ]
