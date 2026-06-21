@@ -1,11 +1,5 @@
 [
   {
-    "name": "Kape vs Horiguchi",
-    "date": "2026-06-20",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-june-20-2026"
-  },
-  {
     "name": "Fiziev vs Torres",
     "date": "2026-06-27",
     "location": "National Gymnastics Arena",
@@ -94,5 +88,11 @@
     "date": "2027-06-14",
     "location": "The White House",
     "url": "https://www.ufc.com/event/ufc-freedom-250"
+  },
+  {
+    "name": "Kape vs Horiguchi",
+    "date": "2027-06-20",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-june-20-2026"
   }
 ]
