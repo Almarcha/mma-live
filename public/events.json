@@ -48,51 +48,51 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-september-05-2026"
   },
   {
-    "name": "Sterling vs Zalal",
-    "date": "2027-04-25",
+    "name": "Kape vs Horiguchi",
+    "date": "Fecha desconocida",
     "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-april-25-2026"
-  },
-  {
-    "name": "Della Maddalena vs Prates",
-    "date": "2027-05-02",
-    "location": "RAC Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-may-02-2026"
-  },
-  {
-    "name": "Chimaev vs Strickland",
-    "date": "2027-05-09",
-    "location": "Prudential Center",
-    "url": "https://www.ufc.com/event/ufc-328"
-  },
-  {
-    "name": "Allen vs Costa",
-    "date": "2027-05-16",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-may-16-2026"
-  },
-  {
-    "name": "Song vs Figueiredo",
-    "date": "2027-05-30",
-    "location": "Galaxy Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-may-30-2026"
-  },
-  {
-    "name": "Muhammad vs Bonfim",
-    "date": "2027-06-06",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
+    "url": "https://www.ufc.com/event/ufc-fight-night-june-20-2026"
   },
   {
     "name": "UFC Freedom 250",
-    "date": "2027-06-14",
+    "date": "Fecha desconocida",
     "location": "The White House",
     "url": "https://www.ufc.com/event/ufc-freedom-250"
   },
   {
-    "name": "Kape vs Horiguchi",
-    "date": "2027-06-20",
+    "name": "Muhammad vs Bonfim",
+    "date": "Fecha desconocida",
     "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-june-20-2026"
+    "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
+  },
+  {
+    "name": "Song vs Figueiredo",
+    "date": "Fecha desconocida",
+    "location": "Galaxy Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-30-2026"
+  },
+  {
+    "name": "Allen vs Costa",
+    "date": "Fecha desconocida",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-16-2026"
+  },
+  {
+    "name": "Chimaev vs Strickland",
+    "date": "Fecha desconocida",
+    "location": "Prudential Center",
+    "url": "https://www.ufc.com/event/ufc-328"
+  },
+  {
+    "name": "Della Maddalena vs Prates",
+    "date": "Fecha desconocida",
+    "location": "RAC Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-may-02-2026"
+  },
+  {
+    "name": "Sterling vs Zalal",
+    "date": "Fecha desconocida",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-april-25-2026"
   }
 ]
