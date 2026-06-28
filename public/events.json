@@ -1,11 +1,5 @@
 [
   {
-    "name": "Fiziev vs Torres",
-    "date": "2026-06-27",
-    "location": "National Gymnastics Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-june-27-2026"
-  },
-  {
     "name": "McGregor vs Holloway 2",
     "date": "2026-07-11",
     "location": "T-Mobile Arena",
@@ -94,5 +88,11 @@
     "date": "2027-06-20",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-june-20-2026"
+  },
+  {
+    "name": "Fiziev vs Torres",
+    "date": "2027-06-27",
+    "location": "National Gymnastics Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-june-27-2026"
   }
 ]
