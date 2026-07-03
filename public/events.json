@@ -24,6 +24,12 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-august-01-2026"
   },
   {
+    "name": "Gamrot vs Salkilld",
+    "date": "2026-08-08",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-august-08-2026"
+  },
+  {
     "name": "Makhachev vs Machado Garry",
     "date": "2026-08-15",
     "location": "Xfinity Mobile Arena",
@@ -40,12 +46,6 @@
     "date": "2026-08-29",
     "location": "Oriental Sports Center",
     "url": "https://www.ufc.com/event/ufc-fight-night-august-29-2026"
-  },
-  {
-    "name": "TBD vs TBD",
-    "date": "2026-09-05",
-    "location": "Accor Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-september-05-2026"
   },
   {
     "name": "Della Maddalena vs Prates",
