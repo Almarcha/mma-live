@@ -1,11 +1,5 @@
 [
   {
-    "name": "Du Plessis vs Usman",
-    "date": "2026-07-18",
-    "location": "Paycom Center",
-    "url": "https://www.ufc.com/event/ufc-fight-night-july-18-2026"
-  },
-  {
     "name": "Ankalaev vs Guskov",
     "date": "2026-07-25",
     "location": "Etihad Arena",
@@ -48,12 +42,6 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-september-05-2026"
   },
   {
-    "name": "Chimaev vs Strickland",
-    "date": "2027-05-09",
-    "location": "Prudential Center",
-    "url": "https://www.ufc.com/event/ufc-328"
-  },
-  {
     "name": "Allen vs Costa",
     "date": "2027-05-16",
     "location": "Meta APEX",
@@ -94,5 +82,11 @@
     "date": "2027-07-11",
     "location": "T-Mobile Arena",
     "url": "https://www.ufc.com/event/ufc-329"
+  },
+  {
+    "name": "Du Plessis vs Usman",
+    "date": "2027-07-18",
+    "location": "Paycom Center",
+    "url": "https://www.ufc.com/event/ufc-fight-night-july-18-2026"
   }
 ]
