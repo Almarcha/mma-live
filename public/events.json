@@ -1,11 +1,5 @@
 [
   {
-    "name": "Gamrot vs Salkilld",
-    "date": "2026-08-08",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-08-2026"
-  },
-  {
     "name": "Makhachev vs Machado Garry",
     "date": "2026-08-15",
     "location": "Xfinity Mobile Arena",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-september-26-2026"
   },
   {
-    "name": "Muhammad vs Bonfim",
-    "date": "2027-06-06",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-june-06-2026"
+    "name": "TBD vs TBD",
+    "date": "2026-10-03",
+    "location": "Delta Center",
+    "url": "https://www.ufc.com/event/ufc-332"
   },
   {
     "name": "UFC Freedom 250",
@@ -94,5 +88,11 @@
     "date": "2027-08-01",
     "location": "Belgrade Arena",
     "url": "https://www.ufc.com/event/ufc-fight-night-august-01-2026"
+  },
+  {
+    "name": "Gamrot vs Salkilld",
+    "date": "2027-08-08",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-august-08-2026"
   }
 ]
