@@ -1,11 +1,5 @@
 [
   {
-    "name": "Makhachev vs Machado Garry",
-    "date": "2026-08-15",
-    "location": "Xfinity Mobile Arena",
-    "url": "https://www.ufc.com/event/ufc-330"
-  },
-  {
     "name": "Hernandez vs Rodrigues",
     "date": "2026-08-22",
     "location": "Golden 1 Center",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-332"
   },
   {
-    "name": "UFC Freedom 250",
-    "date": "2027-06-14",
-    "location": "The White House",
-    "url": "https://www.ufc.com/event/ufc-freedom-250"
+    "name": "Buckley vs Malott",
+    "date": "2026-10-17",
+    "location": "Rogers Place",
+    "url": "https://www.ufc.com/event/ufc-fight-night-october-17-2026"
   },
   {
     "name": "Kape vs Horiguchi",
@@ -94,5 +88,11 @@
     "date": "2027-08-08",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-august-08-2026"
+  },
+  {
+    "name": "Makhachev vs Machado Garry",
+    "date": "2027-08-15",
+    "location": "Xfinity Mobile Arena",
+    "url": "https://www.ufc.com/event/ufc-330"
   }
 ]
