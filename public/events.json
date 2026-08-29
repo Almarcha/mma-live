@@ -1,11 +1,5 @@
 [
   {
-    "name": "Maheshate vs Flowers",
-    "date": "2026-08-28",
-    "location": "–",
-    "url": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals"
-  },
-  {
     "name": "Nurmagomedov vs Song",
     "date": "2026-08-29",
     "location": "Oriental Sports Center",
@@ -94,5 +88,11 @@
     "date": "2027-08-22",
     "location": "Golden 1 Center",
     "url": "https://www.ufc.com/event/ufc-fight-night-august-22-2026"
+  },
+  {
+    "name": "Maheshate vs Flowers",
+    "date": "2027-08-28",
+    "location": "–",
+    "url": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals"
   }
 ]
