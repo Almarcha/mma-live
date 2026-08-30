@@ -1,11 +1,5 @@
 [
   {
-    "name": "Nurmagomedov vs Song",
-    "date": "2026-08-29",
-    "location": "Oriental Sports Center",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-29-2026"
-  },
-  {
     "name": "Hooker vs Parnasse",
     "date": "2026-09-05",
     "location": "Accor Arena",
@@ -94,5 +88,11 @@
     "date": "2027-08-28",
     "location": "–",
     "url": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals"
+  },
+  {
+    "name": "Nurmagomedov vs Song",
+    "date": "2027-08-29",
+    "location": "Oriental Sports Center",
+    "url": "https://www.ufc.com/event/ufc-fight-night-august-29-2026"
   }
 ]
