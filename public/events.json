@@ -30,6 +30,12 @@
     "url": "https://www.ufc.com/event/ufc-332"
   },
   {
+    "name": "TBD vs TBD",
+    "date": "2026-10-10",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-october-10-2026"
+  },
+  {
     "name": "Buckley vs Malott",
     "date": "2026-10-17",
     "location": "Rogers Place",
@@ -40,12 +46,6 @@
     "date": "2026-10-24",
     "location": "Etihad Arena",
     "url": "https://www.ufc.com/event/ufc-333"
-  },
-  {
-    "name": "Bonfim vs Brady",
-    "date": "2026-11-07",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-november-07-2026"
   },
   {
     "name": "Du Plessis vs Usman",
