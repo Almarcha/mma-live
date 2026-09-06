@@ -1,11 +1,5 @@
 [
   {
-    "name": "Hooker vs Parnasse",
-    "date": "2026-09-05",
-    "location": "Accor Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-september-05-2026"
-  },
-  {
     "name": "Silva vs Delgado",
     "date": "2026-09-12",
     "location": "Desert Diamond Arena",
@@ -24,7 +18,7 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-september-26-2026"
   },
   {
-    "name": "Silva vs Cong",
+    "name": "Silva vs Wang",
     "date": "2026-10-03",
     "location": "Delta Center",
     "url": "https://www.ufc.com/event/ufc-332"
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-333"
   },
   {
-    "name": "Du Plessis vs Usman",
-    "date": "2027-07-18",
-    "location": "Paycom Center",
-    "url": "https://www.ufc.com/event/ufc-fight-night-july-18-2026"
+    "name": "TBD vs TBD",
+    "date": "2026-10-31",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-october-31-2026"
   },
   {
     "name": "Ankalaev vs Guskov",
@@ -94,5 +88,11 @@
     "date": "2027-08-29",
     "location": "Oriental Sports Center",
     "url": "https://www.ufc.com/event/ufc-fight-night-august-29-2026"
+  },
+  {
+    "name": "Hooker vs Parnasse",
+    "date": "2027-09-05",
+    "location": "Accor Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-september-05-2026"
   }
 ]
