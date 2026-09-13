@@ -1,11 +1,5 @@
 [
   {
-    "name": "Silva vs Delgado",
-    "date": "2026-09-12",
-    "location": "Desert Diamond Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-september-12-2026"
-  },
-  {
     "name": "Van vs Pantoja 2",
     "date": "2026-09-19",
     "location": "Crypto.com Arena",
@@ -94,5 +88,11 @@
     "date": "2027-09-05",
     "location": "Accor Arena",
     "url": "https://www.ufc.com/event/ufc-fight-night-september-05-2026"
+  },
+  {
+    "name": "Silva vs Delgado",
+    "date": "2027-09-12",
+    "location": "Desert Diamond Arena",
+    "url": "https://www.ufc.com/event/ufc-fight-night-september-12-2026"
   }
 ]
