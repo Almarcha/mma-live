@@ -1,11 +1,5 @@
 [
   {
-    "name": "Van vs Pantoja 2",
-    "date": "2026-09-19",
-    "location": "Crypto.com Arena",
-    "url": "https://www.ufc.com/event/cryptocom-ufc-331"
-  },
-  {
     "name": "Rosas Jr. vs Barcelos",
     "date": "2026-09-26",
     "location": "Meta APEX",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-november-07-2026"
   },
   {
-    "name": "Medic vs Rodriguez",
-    "date": "2027-08-01",
-    "location": "Belgrade Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-01-2026"
+    "name": "TBD vs TBD",
+    "date": "2026-11-14",
+    "location": "Madison Square Garden",
+    "url": "https://www.ufc.com/event/ufc-334"
   },
   {
     "name": "Gamrot vs Salkilld",
@@ -94,5 +88,11 @@
     "date": "2027-09-12",
     "location": "Desert Diamond Arena",
     "url": "https://www.ufc.com/event/ufc-fight-night-september-12-2026"
+  },
+  {
+    "name": "Van vs Pantoja 2",
+    "date": "2027-09-19",
+    "location": "Crypto.com Arena",
+    "url": "https://www.ufc.com/event/cryptocom-ufc-331"
   }
 ]
