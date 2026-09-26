@@ -48,6 +48,36 @@
     "url": "https://www.ufc.com/event/ufc-334"
   },
   {
+    "name": "Gamrot vs Salkilld",
+    "date": "2027-08-08",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-august-08-2026"
+  },
+  {
+    "name": "Makhachev vs Machado Garry",
+    "date": "2027-08-15",
+    "location": "Xfinity Mobile Arena",
+    "url": "https://www.ufc.com/event/ufc-330"
+  },
+  {
+    "name": "Hernandez vs Rodrigues",
+    "date": "2027-08-22",
+    "location": "Golden 1 Center",
+    "url": "https://www.ufc.com/event/ufc-fight-night-august-22-2026"
+  },
+  {
+    "name": "Maheshate vs Flowers",
+    "date": "2027-08-28",
+    "location": "–",
+    "url": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals"
+  },
+  {
+    "name": "Nurmagomedov vs Song",
+    "date": "2027-08-29",
+    "location": "Oriental Sports Center",
+    "url": "https://www.ufc.com/event/ufc-fight-night-august-29-2026"
+  },
+  {
     "name": "Hooker vs Parnasse",
     "date": "2027-09-05",
     "location": "Accor Arena",
@@ -64,35 +94,5 @@
     "date": "2027-09-19",
     "location": "Crypto.com Arena",
     "url": "https://www.ufc.com/event/cryptocom-ufc-331"
-  },
-  {
-    "name": "Makhachev vs Machado Garry",
-    "date": "Sat, août 15 / 8:00 PM HC / Carte principale",
-    "location": "Xfinity Mobile Arena",
-    "url": "https://www.ufc.com/event/ufc-330"
-  },
-  {
-    "name": "Hernandez vs Rodrigues",
-    "date": "Sat, août 22 / 7:00 PM HC / Carte principale",
-    "location": "Golden 1 Center",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-22-2026"
-  },
-  {
-    "name": "Nurmagomedov vs Song",
-    "date": "Sat, août 29 / 5:00 AM HC / Carte principale",
-    "location": "Oriental Sports Center",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-29-2026"
-  },
-  {
-    "name": "Gamrot vs Salkilld",
-    "date": "Sat, août 8 / 7:00 PM HC / Carte principale",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-08-2026"
-  },
-  {
-    "name": "Maheshate vs Flowers",
-    "date": "ven, août 28 / 4:00 AM HC / Carte principale",
-    "location": "–",
-    "url": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals"
   }
 ]
