@@ -1,11 +1,5 @@
 [
   {
-    "name": "Rosas Jr. vs Barcelos",
-    "date": "2026-09-26",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-september-26-2026"
-  },
-  {
     "name": "Silva vs Wang",
     "date": "2026-10-03",
     "location": "Delta Center",
@@ -94,5 +88,11 @@
     "date": "2027-09-19",
     "location": "Crypto.com Arena",
     "url": "https://www.ufc.com/event/cryptocom-ufc-331"
+  },
+  {
+    "name": "Rosas Jr. vs Barcelos",
+    "date": "2027-09-26",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-september-26-2026"
   }
 ]
