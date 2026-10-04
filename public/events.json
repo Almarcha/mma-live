@@ -1,11 +1,5 @@
 [
   {
-    "name": "Silva vs Wang",
-    "date": "2026-10-03",
-    "location": "Delta Center",
-    "url": "https://www.ufc.com/event/ufc-332"
-  },
-  {
     "name": "Allen vs Duncan",
     "date": "2026-10-10",
     "location": "Meta APEX",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-november-21-2026"
   },
   {
-    "name": "Makhachev vs Machado Garry",
-    "date": "2027-08-15",
-    "location": "Xfinity Mobile Arena",
-    "url": "https://www.ufc.com/event/ufc-330"
+    "name": "TBD vs TBD",
+    "date": "2026-12-12",
+    "location": "T-Mobile Arena",
+    "url": "https://www.ufc.com/event/ufc-335"
   },
   {
     "name": "Hernandez vs Rodrigues",
@@ -94,5 +88,11 @@
     "date": "2027-09-26",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-september-26-2026"
+  },
+  {
+    "name": "Silva vs Wang",
+    "date": "2027-10-03",
+    "location": "Delta Center",
+    "url": "https://www.ufc.com/event/ufc-332"
   }
 ]
