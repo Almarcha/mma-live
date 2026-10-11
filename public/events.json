@@ -1,11 +1,5 @@
 [
   {
-    "name": "Allen vs Duncan",
-    "date": "2026-10-10",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-october-10-2026"
-  },
-  {
     "name": "Buckley vs Malott",
     "date": "2026-10-17",
     "location": "Rogers Place",
@@ -48,10 +42,10 @@
     "url": "https://www.ufc.com/event/ufc-176"
   },
   {
-    "name": "Hernandez vs Rodrigues",
-    "date": "2027-08-22",
-    "location": "Golden 1 Center",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-22-2026"
+    "name": "Oliveira vs Lopes",
+    "date": "2026-12-12",
+    "location": "T-Mobile Arena",
+    "url": "https://www.ufc.com/event/ufc-335"
   },
   {
     "name": "Maheshate vs Flowers",
@@ -94,5 +88,11 @@
     "date": "2027-10-03",
     "location": "Delta Center",
     "url": "https://www.ufc.com/event/ufc-332"
+  },
+  {
+    "name": "Allen vs Duncan",
+    "date": "2027-10-10",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-october-10-2026"
   }
 ]
