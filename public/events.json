@@ -1,11 +1,5 @@
 [
   {
-    "name": "Buckley vs Malott",
-    "date": "2026-10-17",
-    "location": "Rogers Place",
-    "url": "https://www.ufc.com/event/ufc-fight-night-october-17-2026"
-  },
-  {
     "name": "Volkanovski vs Evloev",
     "date": "2026-10-24",
     "location": "Etihad Arena",
@@ -43,15 +37,15 @@
   },
   {
     "name": "TBD vs TBD",
+    "date": "2027-01-30",
+    "location": "Scotiabank Arena",
+    "url": "https://www.ufc.com/event/ufc-336"
+  },
+  {
+    "name": "TBD vs TBD",
     "date": "2027-02-06",
     "location": "Afterpay Arena",
     "url": "https://www.ufc.com/event/ufc-fight-night-february-06-2027"
-  },
-  {
-    "name": "Maheshate vs Flowers",
-    "date": "2027-08-28",
-    "location": "–",
-    "url": "https://www.ufc.com/event/road-to-ufc-season-5-semifinals"
   },
   {
     "name": "Nurmagomedov vs Song",
@@ -94,5 +88,11 @@
     "date": "2027-10-10",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-october-10-2026"
+  },
+  {
+    "name": "Buckley vs Malott",
+    "date": "2027-10-17",
+    "location": "Rogers Place",
+    "url": "https://www.ufc.com/event/ufc-fight-night-october-17-2026"
   }
 ]
