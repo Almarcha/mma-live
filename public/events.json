@@ -1,11 +1,5 @@
 [
   {
-    "name": "Volkanovski vs Evloev",
-    "date": "2026-10-24",
-    "location": "Etihad Arena",
-    "url": "https://www.ufc.com/event/ufc-333"
-  },
-  {
     "name": "Moicano vs Nolan",
     "date": "2026-10-31",
     "location": "Meta APEX",
@@ -36,6 +30,12 @@
     "url": "https://www.ufc.com/event/ufc-335"
   },
   {
+    "name": "TBD vs TBD",
+    "date": "2027-01-16",
+    "location": "American Airlines Center",
+    "url": "https://www.ufc.com/event/ufc-fight-night-january-16-2027"
+  },
+  {
     "name": "Van vs Kape",
     "date": "2027-01-30",
     "location": "Scotiabank Arena",
@@ -46,12 +46,6 @@
     "date": "2027-02-06",
     "location": "Afterpay Arena",
     "url": "https://www.ufc.com/event/ufc-fight-night-february-06-2027"
-  },
-  {
-    "name": "Nurmagomedov vs Song",
-    "date": "2027-08-29",
-    "location": "Oriental Sports Center",
-    "url": "https://www.ufc.com/event/ufc-fight-night-august-29-2026"
   },
   {
     "name": "Hooker vs Parnasse",
@@ -94,5 +88,11 @@
     "date": "2027-10-17",
     "location": "Rogers Place",
     "url": "https://www.ufc.com/event/ufc-fight-night-october-17-2026"
+  },
+  {
+    "name": "Volkanovski vs Evloev",
+    "date": "2027-10-24",
+    "location": "Etihad Arena",
+    "url": "https://www.ufc.com/event/ufc-333"
   }
 ]
