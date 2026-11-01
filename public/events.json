@@ -1,11 +1,5 @@
 [
   {
-    "name": "Moicano vs Nolan",
-    "date": "2026-10-31",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-october-31-2026"
-  },
-  {
     "name": "Cortes Acosta vs Walker",
     "date": "2026-11-07",
     "location": "Meta APEX",
@@ -94,5 +88,11 @@
     "date": "2027-10-24",
     "location": "Etihad Arena",
     "url": "https://www.ufc.com/event/ufc-333"
+  },
+  {
+    "name": "Moicano vs Nolan",
+    "date": "2027-10-31",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-october-31-2026"
   }
 ]
