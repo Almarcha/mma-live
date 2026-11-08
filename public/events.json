@@ -1,11 +1,5 @@
 [
   {
-    "name": "Cortes Acosta vs Walker",
-    "date": "2026-11-07",
-    "location": "Meta APEX",
-    "url": "https://www.ufc.com/event/ufc-fight-night-november-07-2026"
-  },
-  {
     "name": "Gane vs Hokit",
     "date": "2026-11-14",
     "location": "Madison Square Garden",
@@ -42,12 +36,6 @@
     "url": "https://www.ufc.com/event/ufc-fight-night-february-06-2027"
   },
   {
-    "name": "Silva vs Delgado",
-    "date": "2027-09-12",
-    "location": "Desert Diamond Arena",
-    "url": "https://www.ufc.com/event/ufc-fight-night-september-12-2026"
-  },
-  {
     "name": "Van vs Pantoja 2",
     "date": "2027-09-19",
     "location": "Crypto.com Arena",
@@ -63,7 +51,7 @@
     "name": "Silva vs Wang",
     "date": "2027-10-03",
     "location": "Delta Center",
-    "url": "https://www.ufc.com/event/ufc-332"
+    "url": "https://www.ufc.com/index%2ephp/event/ufc-332"
   },
   {
     "name": "Allen vs Duncan",
@@ -88,5 +76,11 @@
     "date": "2027-10-31",
     "location": "Meta APEX",
     "url": "https://www.ufc.com/event/ufc-fight-night-october-31-2026"
+  },
+  {
+    "name": "Cortes Acosta vs Walker",
+    "date": "2027-11-07",
+    "location": "Meta APEX",
+    "url": "https://www.ufc.com/event/ufc-fight-night-november-07-2026"
   }
 ]
